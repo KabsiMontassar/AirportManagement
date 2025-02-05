@@ -2,12 +2,15 @@
 {
     public class Plane
     {
-        public string Departure { get; set; }
-        public string Destination { get; set; }
-        public DateTime EffectiveArrival { get; set; }
-        public int EstimatedDuration { get; set; }
-        public DateTime FlightDate { get; set; }
-        public int FlightId { get; set; }
+        public int Capacity { get; set; }
+        public DateTime ManufactureDate { get; set; }
+        public int PlaneId { get; set; }
+        public PlaneType PlaneType { get; set; }
 
+        public ICollection<Flight> Flights { get; set; } = [];
+        public override string ToString()
+        {
+            return $"Plane ID: {PlaneId}, Type: {PlaneType}, Capacity: {Capacity}, Manufacture Date: {ManufactureDate.ToShortDateString()}";
+        }
     }
 }
