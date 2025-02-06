@@ -16,25 +16,24 @@
             Console.WriteLine("I am a passenger");
         }
 
-        public bool CheckProfile(string firstName, string lastName)
-        {
-            return FirstName == firstName && LastName == lastName;
-        }
-
-        public bool CheckProfile(string firstName, string lastName, string email)
-        {
-            return FirstName == firstName && LastName == lastName && EmailAddress == email;
-        }
-
-        //public bool CheckProfile(string firstName, string lastName, string email = null)
+        //public bool CheckProfile(string firstName, string lastName)
         //{
-        //    if (string.IsNullOrEmpty(email))  // If email is not provided, check only the name
-        //    {
-        //        return FirstName == firstName && LastName == lastName;
-        //    }
-        //    // If email is provided, check all attributes (name + email)
+        //    return FirstName == firstName && LastName == lastName;
+        //}
+
+        //public bool CheckProfile(string firstName, string lastName, string email)
+        //{
         //    return FirstName == firstName && LastName == lastName && EmailAddress == email;
         //}
+
+        public bool CheckProfile(string firstName, string lastName, string email = null)
+        {
+            if (string.IsNullOrEmpty(email)) 
+            {
+                return FirstName == firstName && LastName == lastName;
+            }
+            return FirstName == firstName && LastName == lastName && EmailAddress == email;
+        }
 
         public override string ToString()
         {
