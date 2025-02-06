@@ -7,7 +7,7 @@ FlightMethods flightmethods = new();
 
 flightmethods.Flights = TestData.listFlights;
 
-foreach( var flight in flightmethods.GetFlightDate("Paris"))
+foreach (var flight in flightmethods.GetFlights("Destination", "Madrid"))
 {
     Console.WriteLine(flight);
 }
