@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.13.35731.43
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console App", "Console App\Console App.csproj", "{E8F6FAB9-FDBE-4312-A07B-1A73A1707627}"
+	ProjectSection(ProjectDependencies) = postProject
+		{086BC3CF-2A02-49B1-B4DA-FAB3072A7E87} = {086BC3CF-2A02-49B1-B4DA-FAB3072A7E87}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AM.ApplicationCore", "Class Library\AM.ApplicationCore.csproj", "{EB2A6C3C-2192-4728-B472-6B7BFAE47283}"
 EndProject
