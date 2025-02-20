@@ -2,12 +2,20 @@
 using Class_Library.Service;
 
 
-  
-        FlightMethods flightmethods = new()
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        Passenger p = new Passenger
         {
-            Flights = TestData.listFlights
+            FirstName = "montassar",
+            LastName = "kebsi"
         };
 
+        p.UpperFullName();
 
-flightmethods.DestinationGroupedFlights();
-    
+        Console.WriteLine(p.FirstName);
+        Console.WriteLine(p.LastName);
+        
+    }
+}

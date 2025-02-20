@@ -66,7 +66,7 @@ namespace Class_Library.Service
             //return average;
 
             return Flights.Where(f => f.Destination == destination).Select(f => f.EstimatedDuration).DefaultIfEmpty(0).Average();
-
+            
 
 
         }
