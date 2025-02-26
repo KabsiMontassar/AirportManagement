@@ -11,6 +11,8 @@
 
         public Plane Plane { get; set; }
 
+        public string AirlineLogo { get; set; }
+
         public ICollection<Passenger> Passengers { get; set; } 
         public override string ToString()
         {
