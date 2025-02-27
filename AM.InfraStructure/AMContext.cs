@@ -1,4 +1,5 @@
-﻿using Class_Library.Domain;
+﻿using AM.InfraStructure.Configuration;
+using Class_Library.Domain;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -34,7 +35,11 @@ namespace AM.InfraStructure
 
 
 
-        
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfiguration(new PlaneConfiguration());
+        }
 
 
 
