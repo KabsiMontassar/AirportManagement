@@ -21,5 +21,6 @@ namespace Class_Library.Domain
         {
             return base.ToString() + $", Nationality: {Nationality}, Health Info: {HealthInformation}";
         }
-    }
+
+    } 
 }
