@@ -24,6 +24,8 @@ namespace Class_Library.Domain
         public string PassportNumber { get; set; }
         [RegularExpression(@"^\d{8}$", ErrorMessage = "TelNumber must be 8 digits long.")]
         public string TelNumber { get; set; }
+
+        public List<Flight> Flights { get; set; } 
         public virtual void PassengerType()
         {
             Console.WriteLine("I am a passenger");

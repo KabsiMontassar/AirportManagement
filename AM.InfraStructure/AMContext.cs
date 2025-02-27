@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
+using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -35,11 +37,32 @@ namespace AM.InfraStructure
 
 
 
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    base.OnModelCreating(modelBuilder);
+        //   // premier methode avec classe de configuration
+        //    modelBuilder.ApplyConfiguration(new PlaneConfiguration());
+        //}
+
+
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfiguration(new PlaneConfiguration());
+            modelBuilder.ApplyConfiguration(new FlightConfiguration());
+
+
+            //modelBuilder.Entity<Plane>()
+            //    .ToTable("MyPlanes")
+            //    .Property(p => p.Capacity)
+            //    .HasColumnName("PlaneCapacity");
+
+            //modelBuilder.Entity<Plane>()
+            //.HasKey(p => p.PlaneId);
         }
+
+       
 
 
 
