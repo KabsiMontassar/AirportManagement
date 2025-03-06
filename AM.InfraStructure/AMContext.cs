@@ -24,6 +24,10 @@ namespace AM.InfraStructure
 
         public DbSet<Traveller> Travellers { get; set; }
 
+        public DbSet<ReservationTicket> ReservationTickets { get; set; }
+
+        public DbSet<Ticket> Ticket { get; set; }
+
         // 2 Chaine de connexion
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -70,8 +74,8 @@ namespace AM.InfraStructure
                     fl.Property(f => f.LastName).HasColumnName("Lastname").IsRequired();
                 });
 
-
-
+            modelBuilder.Entity<ReservationTicket>()
+                .HasKey(r => new { r.TicketFk, r.PassengerFk, r.DateReservation });
         }
 
 
