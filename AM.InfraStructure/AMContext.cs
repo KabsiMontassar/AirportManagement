@@ -60,9 +60,21 @@ namespace AM.InfraStructure
 
             //modelBuilder.Entity<Plane>()
             //.HasKey(p => p.PlaneId);
+
+
+            modelBuilder.Entity<Passenger>()
+                .OwnsOne(p => p.Fullname,
+                fl =>
+                {
+                    fl.Property(f => f.FirstName).HasColumnName("Firstname").IsRequired();
+                    fl.Property(f => f.LastName).HasColumnName("Lastname").IsRequired();
+                });
+
+
+
         }
 
-       
+
 
 
 
