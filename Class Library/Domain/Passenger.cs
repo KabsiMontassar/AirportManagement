@@ -14,7 +14,9 @@ namespace Class_Library.Domain
         public DateTime BirthDate { get; set; }
         [EmailAddress(ErrorMessage = "Invalid Email Address")]
         public string EmailAddress { get; set; }
-       
+
+
+        public ICollection<ReservationTicket> ReservationsTickets { get; set; }
 
 
 
