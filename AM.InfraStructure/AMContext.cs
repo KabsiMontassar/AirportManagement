@@ -76,6 +76,14 @@ namespace AM.InfraStructure
 
             modelBuilder.Entity<ReservationTicket>()
                 .HasKey(r => new { r.TicketFk, r.PassengerFk, r.DateReservation });
+
+
+            //config TPH 
+            modelBuilder.Entity<Passenger>().HasDiscriminator<int>("PassengerType")
+                .HasValue<Traveller>(1)
+                .HasValue<Staff>(2)
+                .HasValue<Passenger>(3);
+
         }
 
 
