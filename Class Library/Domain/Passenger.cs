@@ -14,11 +14,12 @@ namespace Class_Library.Domain
         public DateTime BirthDate { get; set; }
         [EmailAddress(ErrorMessage = "Invalid Email Address")]
         public string EmailAddress { get; set; }
-        // min max
-        [StringLength(25, MinimumLength = 2, ErrorMessage = "FirstName must be between 2 and 25 characters long.")]
-        public string FirstName { get; set; }
-        //public int Id { get; set; }
-        public string LastName { get; set; }
+       
+
+
+
+        public Fullname Fullname { get; set; }
+
         [Key]
         [StringLength(7, ErrorMessage = "PassportNumber must be 7 characters long.")]
         public string PassportNumber { get; set; }
@@ -45,9 +46,9 @@ namespace Class_Library.Domain
         {
             if (string.IsNullOrEmpty(email)) 
             {
-                return FirstName == firstName && LastName == lastName;
+                return Fullname.FirstName == firstName && Fullname.LastName == lastName;
             }
-            return FirstName == firstName && LastName == lastName && EmailAddress == email;
+            return Fullname.FirstName == firstName && Fullname.LastName == lastName && EmailAddress == email;
         }
 
     
