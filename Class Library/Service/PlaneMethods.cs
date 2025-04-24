@@ -13,8 +13,8 @@ namespace Class_Library.Service
 
         public PlaneMethods(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
-            Planes = unitOfWork.Repository<Plane>().GetAll().ToList();
-            Flights = unitOfWork.Repository<Flight>().GetAll().ToList();
+          //  Planes = unitOfWork.Repository<Plane>().GetAll().ToList();
+          //  Flights = unitOfWork.Repository<Flight>().GetAll().ToList();
         }
 
         // 1. Retourner les voyageurs d’un avion passé en paramètre
