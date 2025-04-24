@@ -6,10 +6,10 @@ using Class_Library.Interface;
 
 namespace Class_Library.Service
 {
-    public class    PlaneMethods : Service<Plane>, IPlaneMethods
+    public class PlaneMethods : Service<Plane>, IPlaneMethods
     {
-        private List<Plane> Planes;
-        private List<Flight> Flights;
+        private readonly List<Plane> Planes;
+        private readonly List<Flight> Flights;
 
         public PlaneMethods(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
@@ -45,14 +45,19 @@ namespace Class_Library.Service
         public void RemoveOldPlanes()
         {
             var thresholdDate = DateTime.Now.AddYears(-10);
-            Planes.RemoveAll(p => p.ManufactureDate < thresholdDate);
+            var oldPlanes = Planes.Where(p => p.ManufactureDate < thresholdDate).ToList();
+            foreach (var plane in oldPlanes)
+            {
+                Delete(plane);
+            }
+            Commit();
         }
 
         // 5. Retourner la liste des staffs d’un vol dont son identifiant est passé en paramètre
         public List<Staff> GetStaffByFlightId(int flightId)
         {
-            return Flights.Where(f => f.Id == flightId)
-                          .SelectMany(f => f.Plane.Staffs)
+            return Flights.Where(f => f.FlightId == flightId)
+                          .SelectMany(f => f.Passengers.OfType<Staff>())
                           .ToList();
         }
 
