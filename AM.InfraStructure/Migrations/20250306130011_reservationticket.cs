@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace AM.InfraStructure.Migrations
+namespace Class_Library.InfraStructure.Migrations
 {
     /// <inheritdoc />
     public partial class reservationticket : Migration

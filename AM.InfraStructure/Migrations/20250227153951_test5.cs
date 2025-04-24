@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace AM.InfraStructure.Migrations
+namespace Class_Library.InfraStructure.Migrations
 {
     /// <inheritdoc />
     public partial class test5 : Migration

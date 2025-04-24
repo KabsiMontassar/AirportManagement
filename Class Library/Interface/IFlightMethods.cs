@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Class_Library.Interface
 {
-    public interface IFlightMethods
+    public interface IFlightMethods : IService<Flight>
     {
         List<DateTime> GetFlightDate(string destination);
 

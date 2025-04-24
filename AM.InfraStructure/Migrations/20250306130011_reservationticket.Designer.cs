@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace AM.InfraStructure.Migrations
+namespace Class_Library.InfraStructure.Migrations
 {
     [DbContext(typeof(AMContext))]
     [Migration("20250306130011_reservationticket")]

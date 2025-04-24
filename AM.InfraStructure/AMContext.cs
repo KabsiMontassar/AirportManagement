@@ -1,4 +1,4 @@
-﻿using AM.InfraStructure.Configuration;
+﻿using Class_Library.InfraStructure.Configuration;
 using Class_Library.Domain;
 using Microsoft.EntityFrameworkCore;
 using System;

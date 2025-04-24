@@ -3,8 +3,12 @@ using Class_Library.Interface;
 
 namespace Class_Library.Service
 {
-    public class FlightMethods : IFlightMethods
+    public class FlightMethods : Service<Flight>, IFlightMethods
     {
+        public FlightMethods(IUnitOfWork unitOfWork) : base(unitOfWork)
+        {
+        }
+
         public List<Flight> Flights { get; set; } = [];
 
 
