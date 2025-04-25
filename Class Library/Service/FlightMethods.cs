@@ -5,7 +5,7 @@ namespace Class_Library.Service
 {
     public class FlightMethods : Service<Flight>, IFlightMethods
     {
-        public FlightMethods(IUnitOfWork unitOfWork) : base(unitOfWork)
+        public FlightMethods(UnitOfWork unitOfWork) : base(unitOfWork)
         {
         }
 

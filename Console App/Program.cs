@@ -7,7 +7,7 @@ internal class Program
     private static void Main(string[] args)
     {
          AMContext context = new AMContext();
-        UnitOfWork unitOfWork = new UnitOfWork(context, typeof(GenericRepository<>));
+        AM.InfraStructure.UnitOfWork unitOfWork = new AM.InfraStructure.UnitOfWork(context, typeof(GenericRepository<>));
          PlaneMethods planeMethods = new PlaneMethods(unitOfWork);
 
         // Test avec les données de test existantes
