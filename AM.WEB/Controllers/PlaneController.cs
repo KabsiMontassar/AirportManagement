@@ -1,45 +1,37 @@
-﻿using AM.InfraStructure;
-using Class_Library.Interface;
-using Class_Library.Service;
+﻿using Class_Library.Interface;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-namespace AM.ApplicationCore;
 
-using Class_Library.Service;
-using Class_Library.Interface;
-using AM.InfraStructure;
-
+namespace AM.WEB.Controllers
 {
-    public class HomeController1 : Controller
+    public class PlaneController : Controller
     {
-    static AMContext ctx = new AMContext();
-    static IUnitOfWork uow = new UnitOfWork(ctx);
-    IPlaneMethods pm = new PlaneMethods(uow);
+        IPlaneMethods pm;
 
-
-
-
-
-    // GET: HomeController1
-    public ActionResult Index()
+        public PlaneController(IPlaneMethods pm)
         {
+            this.pm = pm;
+        }
 
+        // GET: PlaneController
+        public ActionResult Index()
+        {
             return View(pm.GetAll());
         }
 
-        // GET: HomeController1/Details/5
+        // GET: PlaneController/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: HomeController1/Create
+        // GET: PlaneController/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: HomeController1/Create
+        // POST: PlaneController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(IFormCollection collection)
@@ -54,13 +46,13 @@ using AM.InfraStructure;
             }
         }
 
-        // GET: HomeController1/Edit/5
+        // GET: PlaneController/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: HomeController1/Edit/5
+        // POST: PlaneController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
@@ -75,13 +67,13 @@ using AM.InfraStructure;
             }
         }
 
-        // GET: HomeController1/Delete/5
+        // GET: PlaneController/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: HomeController1/Delete/5
+        // POST: PlaneController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)

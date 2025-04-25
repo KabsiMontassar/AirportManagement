@@ -1,5 +1,6 @@
 using AM.InfraStructure;
 using Class_Library.Interface;
+using Class_Library.Service;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,7 +14,7 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 
 builder.Services.AddSingleton<Type>(t => typeof(GenericRepository<>));
-
+builder.Services.AddScoped<IPlaneMethods,PlaneMethods>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
