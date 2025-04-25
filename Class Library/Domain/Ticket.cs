@@ -12,6 +12,6 @@ namespace Class_Library.Domain
         public string Destination { get; set; }
         public string Classe { get; set; }
 
-        public ICollection<ReservationTicket> reservationTickets { get; set; }
+        virtual public ICollection<ReservationTicket> reservationTickets { get; set; }
     }
 }

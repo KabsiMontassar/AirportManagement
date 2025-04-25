@@ -15,12 +15,12 @@ namespace Class_Library.Domain
 
         public string AirlineLogo { get; set; }
 
-        public ICollection<Passenger> Passengers { get; set; }
+        virtual public ICollection<Passenger> Passengers { get; set; }
 
 
         [ForeignKey("Plane")]
         public int Planefk { get; set; } 
-        public Plane Plane { get; set; }
+        virtual public Plane Plane { get; set; }
 
         public override string ToString()
         {

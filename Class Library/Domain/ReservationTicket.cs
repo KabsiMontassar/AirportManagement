@@ -11,9 +11,9 @@ namespace Class_Library.Domain
     {
         public DateTime DateReservation { get; set; }
         public float Prix { get; set; }
-        public Passenger Passenger { get; set; }
+        virtual public Passenger Passenger { get; set; }
 
-        public Ticket Ticket { get; set; }
+        virtual public Ticket Ticket { get; set; }
 
 
         [ForeignKey("Ticket")]
