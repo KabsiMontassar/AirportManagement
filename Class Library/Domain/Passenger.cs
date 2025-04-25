@@ -16,7 +16,7 @@ namespace Class_Library.Domain
         public string EmailAddress { get; set; }
 
 
-        public ICollection<ReservationTicket> ReservationsTickets { get; set; }
+        virtual public ICollection<ReservationTicket> ReservationsTickets { get; set; }
 
 
 
@@ -28,7 +28,7 @@ namespace Class_Library.Domain
         [RegularExpression(@"^\d{8}$", ErrorMessage = "TelNumber must be 8 digits long.")]
         public string TelNumber { get; set; }
 
-        public List<Flight> Flights { get; set; } 
+        virtual public List<Flight> Flights { get; set; } 
         public virtual void PassengerType()
         {
             Console.WriteLine("I am a passenger");

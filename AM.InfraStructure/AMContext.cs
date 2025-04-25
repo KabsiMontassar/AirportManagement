@@ -1,4 +1,4 @@
-﻿using Class_Library.InfraStructure.Configuration;
+﻿using Class_Library.InfraStructure;
 using Class_Library.Domain;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -8,6 +8,7 @@ using System.Runtime.ConstrainedExecution;
 using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
+using AM.InfraStructure.Configuration;
 
 namespace AM.InfraStructure
 {
@@ -32,6 +33,7 @@ namespace AM.InfraStructure
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            optionsBuilder.UseLazyLoadingProxies();
             optionsBuilder.UseSqlServer(@"Data Source=(localdb)\mssqllocaldb;
                 Initial Catalog=4arctic4;Integrated Security=true"); 
             base.OnConfiguring(optionsBuilder);
