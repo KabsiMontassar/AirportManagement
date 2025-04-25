@@ -1,7 +1,18 @@
+using AM.InfraStructure;
+using Class_Library.Interface;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<DbContext, AMContext>();
+
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+
+
+builder.Services.AddSingleton<Type>(t => typeof(GenericRepository<>));
 
 var app = builder.Build();
 
